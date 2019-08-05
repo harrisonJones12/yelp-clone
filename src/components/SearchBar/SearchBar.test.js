@@ -6,5 +6,5 @@ it('it renders correctly', () => {
     const tree = renderer
     .create(<SearchBar></SearchBar>)
     .toJSON();
-    expect(tree).toMatchSnapShot();
+    expect(tree).toMatchSnapshot();
 });
