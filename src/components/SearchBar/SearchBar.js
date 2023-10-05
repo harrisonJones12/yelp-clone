@@ -1,6 +1,5 @@
 import React from 'react';
 import './SearchBar.css';
-import Yelp from './src/util/Yelp.js';
 
 
 class SearchBar extends React.Component {
@@ -15,15 +14,16 @@ class SearchBar extends React.Component {
     this.handleTermChange = this.handleTermChange.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
     this.handleLocationChange = this.handleLocationChange.bind(this);
+
     this.sortByOptions = {
       'Best Match':'best_match',
-      'Highest Rated':'highest_rated',
-      'Most Reviewed':'most_reviewed'
+      'Highest Rated':'rating',
+      'Most Reviewed':'review_count'
     };
   }
 
   getSortByClass(sortByOption) {
-    if (sortByOption == this.state.sortBy) {
+    if (sortByOption === this.state.sortBy) {
         return 'active';
     } else {
         return '';
@@ -54,15 +54,16 @@ class SearchBar extends React.Component {
   }
 
   renderSortByOptions() {
-    return(
-    Object.keys(this.sortByOptions).map(sortByOption => {
-        const sortByOptionValue = sortByOption;
-        return <li
-        className={this.getSortByClass(sortByOptionValue)}
-        onClick={this.handleSortByChange.bind(this,sortByOptionValue)}
-        key={sortByOptionValue}>{sortByOption}</li>;
-    }));
-  }
+      return Object.keys(this.sortByOptions).map(sortByOption => {
+        let sortByOptionValue = this.sortByOptions[sortByOption];
+        return (<li className={this.getSortByClass(sortByOptionValue)}
+                    key={sortByOptionValue}
+                    onClick={this.handleSortByChange.bind(this, sortByOptionValue)}>
+                  {sortByOption}
+               </li>);
+      });
+    }
+
   render() {
     return (
       <div className="SearchBar">

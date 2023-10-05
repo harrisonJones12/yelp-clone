@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it renders correctly 1`] = `
+<div
+  className="SearchBar"
+>
+  <div
+    className="SearchBar-sort-options"
+  >
+    <ul>
+      <li
+        className="active"
+        onClick={[Function]}
+      >
+        Best Match
+      </li>
+      <li
+        className=""
+        onClick={[Function]}
+      >
+        Highest Rated
+      </li>
+      <li
+        className=""
+        onClick={[Function]}
+      >
+        Most Reviewed
+      </li>
+    </ul>
+  </div>
+  <div
+    className="SearchBar-fields"
+  >
+    <input
+      onChange={[Function]}
+      placeholder="Search Businesses"
+    />
+    <input
+      onChange={[Function]}
+      placeholder="Where?"
+    />
+  </div>
+  <div
+    className="SearchBar-submit"
+  >
+    <a
+      onClick={[Function]}
+    >
+      Let's Go
+    </a>
+  </div>
+</div>
+`;
